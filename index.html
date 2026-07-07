@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#050505">
+  <title>파일갤러리 · 파일앱 이미지 뷰어</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Home Screen -->
+  <div id="home" class="screen home">
+    <div class="titlebox">
+      <div class="pill">PWA · Offline Ready</div>
+      <h1>파일갤러리</h1>
+      <p>사진 앱으로 옵기지 않고,<br>파일 앱의 이미지를 여러 장 선택해<br>좌우로 넘겨 봅니다.</p>
+    </div>
+
+    <div class="button-stack">
+      <label for="fileInput" class="btn primary">
+        이미지 여러 장 선택
+        <input type="file" id="fileInput" accept="image/*" multiple hidden>
+      </label>
+      
+      <label for="folderInput" class="btn secondary">
+        폴더 선택 · 지원 브라우저용
+        <input type="file" id="folderInput" webkitdirectory directory multiple hidden>
+      </label>
+    </div>
+
+    <div class="card">
+      <b>설치 후 사용</b>
+      <p style="font-size:13px; color:var(--muted);">
+        Safari에서 공유 버튼 → <b>홈 화면에 추가</b>.<br>
+        이후 홈 화면 아이콘으로 실행합니다.
+      </p>
+    </div>
+  </div>
+
+  <!-- Viewer Screen -->
+  <div id="viewer" class="screen viewer hidden">
+    <!-- Top Bar -->
+    <div class="bar top">
+      <button id="closeBtn" class="chip">닫기</button>
+      <div id="count" class="count">0 / 0</div>
+      <button id="thumbBtn" class="chip">목록</button>
+    </div>
+
+    <!-- Image Stage -->
+    <div id="stage" class="stage">
+      <img id="photo" alt="">
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="bar bottom" style="display:flex; align-items:center; justify-content:space-between; padding:0 12px;">
+      <button id="prevBtn" class="nav">‹</button>
+      <div id="name" class="name"></div>
+      <button id="nextBtn" class="nav">›</button>
+    </div>
+  </div>
+
+  <!-- Thumbnails Screen -->
+  <div id="thumbScreen" class="screen thumbs-screen hidden">
+    <div class="bar top solid">
+      <button id="viewerBtn" class="chip">뷰어</button>
+      <div style="flex:1; text-align:center; font-weight:700;">선택 목록</div>
+      <button id="resetBtn" class="chip">초기화</button>
+    </div>
+    <div id="thumbs" class="thumbs"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

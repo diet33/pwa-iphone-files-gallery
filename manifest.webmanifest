@@ -1,0 +1,11 @@
+{
+  "name": "파일앱 이미지 뷰어",
+  "short_name": "파일갤러리",
+  "description": "파일 앱의 이미지를 앵범으로 옵기지 않고 선택해서 좌우 스와이프로 보는 PWA",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "orientation": "any"
+}
